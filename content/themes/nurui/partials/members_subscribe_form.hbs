@@ -1,0 +1,37 @@
+{{#if @labs.members}}
+{{^if @member}}
+<div class="section-subscribe wrap">
+	<div class="subscribe-wrap">
+		<form data-members-form="subscribe" class="subscribe-form">
+			<h3>{{t "Join our occasional newsletter"}}</h3>
+			<div id="ityped" class="ityped">
+				<span class="ityped-wrap"></span>
+			</div>
+			<div class="form-group">
+				<input data-members-email class="subscribe-email" placeholder="{{t "Your email address"}}" type="email" name="email" aria-label="{{t "Your email address"}}" required>
+			</div>
+			<button type="submit" class="global-button">{{t "Subscribe"}}</button>
+		</form>
+		{{>members_subscribe_alerts}}
+		<div class="subscribe-success">
+			<h3>{{t "Great!"}}</h3>
+			{{t "Check your inbox and click the link to confirm your subscription"}}
+		</div>
+	</div>
+</div>
+{{#contentFor "members_subscribe_form_script"}}
+<script>
+var initTyped = document.getElementById("ityped");
+if (initTyped) {
+	ityped.init(document.querySelector(".ityped-wrap"), {
+		strings: ['{{t "Start your day with {blogtitle}" blogtitle=@site.title}}', '{{t "No spam ever, we promise!"}}'],
+		showCursor: true,
+		typeSpeed:  150,
+		startDelay: 500,
+		backDelay:  5000
+	});
+}
+</script>
+{{/contentFor}}
+{{/if}}
+{{/if}}

@@ -1,0 +1,46 @@
+{{! Start "dots" navigation }}
+
+{{^if isSecondary}}
+{{#foreach navigation to="4"}}
+<li class="nav-list-item">
+	<a href="{{url absolute="true"}}" class="nav-link">{{label}}</a>
+	<span class="nav-dot{{#if current}} nav-dot-current{{/if}}"></span>
+</li>
+{{/foreach}}
+<li class="nav-dots{{#foreach navigation from="5" to="5"}} is-visible{{/foreach}}">
+	<ul class="nav-dots-wrap">
+		{{#foreach navigation from="5"}}
+		<li class="nav-list-item">
+			<a href="{{url absolute="true"}}" class="nav-link">{{label}}</a>
+			<span class="nav-dot{{#if current}} nav-dot-current{{/if}}"></span>
+		</li>
+		{{/foreach}}
+	</ul>
+</li>
+{{/if}}
+
+{{! End "dots" navigation }}
+
+{{! Standard navigation }}
+
+{{!--
+{{^if isSecondary}}
+{{#foreach navigation}}
+<li class="nav-list-item">
+	<a href="{{url absolute="true"}}" class="nav-link">{{label}}</a>
+	<span class="nav-dot{{#if current}} nav-dot-current{{/if}}"></span>
+</li>
+{{/foreach}}
+{{/if}}
+--}}
+
+{{! Footer navigation }}
+
+{{#if isSecondary}}
+{{#foreach navigation}}
+<li class="nav-list-item">
+	<a href="{{url absolute="true"}}" class="nav-link">{{label}}</a>
+	<span class="nav-dot{{#if current}} nav-dot-current{{/if}}"></span>
+</li>
+{{/foreach}}
+{{/if}}

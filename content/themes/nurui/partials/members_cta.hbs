@@ -1,0 +1,20 @@
+<div class="members-cta-blur {{visibility}}">
+	<p aria-hidden="true">This post is for subscribers only. You don't have access to this post on {{@site.title}} at the moment, but if you upgrade your account you'll be able to see the whole thing, as well as all the other posts in the archive! Subscribing only takes a few seconds and will give you immediate access.</p>
+</div>
+<div class="members-cta members-cta-members members-cta-white {{visibility}}">
+	<h2 class="members-cta-title members-cta-white">{{t "This post is for paying subscribers only"}}</h2>
+	{{#if @member}}
+	<p>{{t "Upgrade your account to read the post and get access to the full library of posts for paying subscribers only."}}</p>
+	<a class="members-cta-button global-button" href="{{@site.url}}/account/">{{t "See plans"}}</a>
+	{{else}}
+	<p>{{t "Sign up now and upgrade your account to read the post and get access to the full library of posts for paying subscribers only."}}</p>
+	<a class="members-cta-button global-button" href="{{@site.url}}/signup/">{{t "Sign up now"}}</a>
+	<small>{{t "Already have an account?"}} <a class="members-cta-white" href="{{@site.url}}/signin/">{{t "Sign in"}}</a></small>
+	{{/if}}
+</div>
+<div class="members-cta members-cta-free members-cta-white {{visibility}}">
+	<h2 class="members-cta-title members-cta-white">{{t "This post is for subscribers only"}}</h2>
+	<p>{{t "Sign up now to read the post and get access to the full library of posts for subscribers only."}}</p>
+	<a class="members-cta-button global-button" href="{{@site.url}}/signup/">{{t "Sign up now"}}</a>
+	<small>{{t "Already have an account?"}} <a class="members-cta-white" href="{{@site.url}}/signin/">{{t "Sign in"}}</a></small>
+</div>

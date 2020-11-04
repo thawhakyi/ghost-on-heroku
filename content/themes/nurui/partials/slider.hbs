@@ -1,0 +1,15 @@
+<div id="slider" class="section-scrollable">
+	{{#get "pages" filter="featured:true" order="published_at desc" as |slider-pages|}}
+	{{#foreach slider-pages visibility="all"}}
+	{{>pages}}
+	{{/foreach}}
+	{{/get}}
+	{{#get "posts" filter="featured:true" include="authors" as |slider-posts|}}
+	{{#foreach slider-posts visibility="all"}}
+	{{>posts}}
+	{{/foreach}}
+	{{/get}}
+</div>
+<div class="scrollable-nav">
+	<span id="next" class="next"></span>
+</div>
