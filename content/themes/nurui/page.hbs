@@ -1,0 +1,18 @@
+{{!< default}}
+{{#post}}
+<article>
+	{{>pages}}
+	<div class="section-post wrap">
+		<div class="post-wrap {{^if feature_image}}no-image{{/if}}{{^if access}} no-access{{/if}}">
+			{{#if access}}
+			{{content}}
+			{{else}}
+			{{>members_cta}}
+			{{/if}}
+		</div>
+	</div>
+</article>
+{{#has tag="#subscribe-form"}}
+{{>members_subscribe_form}}
+{{/has}}
+{{/post}}

@@ -1,0 +1,22 @@
+{{!< default}}
+{{#post}}
+<div class="membership-plans membership-header section-profile{{#if feature_image}} is-cover{{/if}}">
+    <div class="profile-wrap {{#if feature_image}}is-cover" style="background-image: url({{feature_image}}){{/if}}">
+        <h1>{{title}}</h1>
+        <h2>{{t "Unlock full access to {blogtitle} and see the entire library of subscribers only content & updates" blogtitle=@site.title}}</h2>
+        <span class="membership-small-info">{{t "Choose your plan"}}</span>
+    </div>
+</div>
+<div id="loop" class="section-loop wrap">
+    <div class="items-wrap membership-cards flex">
+        {{>members_plan_free}}
+        {{>members_plan_monthly}}
+        {{>members_plan_yearly}}
+    </div>
+    {{^if @member}}
+    <div class="membership-footer">
+        <small>{{t "Already have an account?"}} <a href="{{@site.url}}/signin/">{{t "Sign in"}}</a></small>
+    </div>
+    {{/if}}
+</div>
+{{/post}}
